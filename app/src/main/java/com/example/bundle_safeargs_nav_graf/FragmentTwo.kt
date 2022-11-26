@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 
 class FragmentTwo : Fragment() {
 
@@ -19,7 +20,11 @@ class FragmentTwo : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val tvTextF2: TextView = view.findViewById(R.id.tvTextF2)
-        val text = arguments?.getString("MyArgsNav")
+
+//        val text = arguments?.getString("MyArgsNav")
+
+        val args: FragmentTwoArgs by navArgs()
+        val text = args.MyArgsNav
         tvTextF2.text = text
     }
 

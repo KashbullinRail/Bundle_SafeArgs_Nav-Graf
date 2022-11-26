@@ -24,13 +24,18 @@ class FragmentOne : Fragment() {
         val btnGo:Button = view.findViewById(R.id.btnGo)
         val etText: EditText = view.findViewById(R.id.etText)
 
-        val bundle = Bundle()
+//         для bundle
+//        val bundle = Bundle()
+
         btnGo.setOnClickListener {
             val name = etText.text
             val hello = "Привет, $name"
 
-            bundle.putString("MyArgsNav", hello)
-            findNavController().navigate(R.id.fragmentTwo, bundle)
+//            для bundle
+//            bundle.putString("MyArgsNav", hello)
+
+            val action = FragmentOneDirections.actionFragmentOneToFragmentTwo(hello)
+            findNavController().navigate(action)
         }
 
 
